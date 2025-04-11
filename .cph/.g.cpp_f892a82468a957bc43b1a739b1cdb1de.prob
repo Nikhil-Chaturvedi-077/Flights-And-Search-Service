@@ -1,1 +1,0 @@
-{"name":"Local: g","url":"c:\\Users\\nikhi\\DEVELOPMENT\\AirlineManagementProject\\Flightandsearch\\g.cpp","tests":[{"id":1743188523480,"input":"1\n8 5\n11011011\n10011","output":"yes"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\nikhi\\DEVELOPMENT\\AirlineManagementProject\\Flightandsearch\\g.cpp","group":"local","local":true}
