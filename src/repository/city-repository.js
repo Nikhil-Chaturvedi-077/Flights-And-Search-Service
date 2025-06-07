@@ -22,6 +22,7 @@ class CityRepository{
                 where:{
                     id:cityId
                 }
+                
             });
             return true;
         } catch(error) {
@@ -39,7 +40,7 @@ class CityRepository{
             // return city;
             const city = await City.findByPk(cityId);
             city.name=data.name;
-            return city.save();
+            await city.save();
             return city;
         } catch(error) {
             console.log("Something went wrong in repository layer");
@@ -51,6 +52,26 @@ class CityRepository{
         try{
             const city = await City.findByPk(cityId);
             return city;
+        } catch(error) {
+            console.log("Something went wrong in repository layer");
+            throw{error};
+        }
+    }
+
+    async getAllcities(filter) {
+        try{
+            if(filter.name){
+                const cities = await City.findAll({
+                    where:{
+                        name:{
+                            [Op.startsWith]:filter.name
+                        }
+                    }
+                });
+                return cities;
+            }
+            const cities = await City.findAll();
+            return cities;
         } catch(error) {
             console.log("Something went wrong in repository layer");
             throw{error};
